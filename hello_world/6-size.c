@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
 * main - point d'entrée du programme
-* affiche les tailles des différents types avec sizeof
-* Return : 0 si le programme s'execute correctement
+* Description : affiche les tailles des différents types avec sizeof
+* Return: 0 si le programme s'execute correctement
 */
 int main(void)
 {
