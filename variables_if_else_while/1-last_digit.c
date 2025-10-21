@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+/**
+ * main - point d'entrée du programme
+ * Description : affiche le dernier chiffre de n et un commentaire
+ * Return: 0 si le programme s'exécute correctement
+ */
+int main(void)
+{
+	int n;
+	int last_digit;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	last_digit = n % 10;
+
+	printf("Dernier chiffre de %d est %d ", n, last_digit);
+
+	if (last_digit > 5)
+	{
+		printf("et est supérieur à 5\n");
+	}
+	else if (last_digit == 0)
+	{
+		printf("et est 0\n");
+	}
+	else
+	{
+		printf("et est inférieur à 6 et différent de 0\n");
+	}
+
+	return (0);
+}
