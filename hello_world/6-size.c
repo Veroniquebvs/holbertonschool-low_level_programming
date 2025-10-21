@@ -2,7 +2,7 @@
 /**
 * main - point d'entrée du programme
 * affiche les tailles des différents types avec sizeof
-* return : 0 si le programme s'execute correctement
+* Return : 0 si le programme s'execute correctement
 */
 int main(void)
 {
