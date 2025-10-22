@@ -1,12 +1,10 @@
 #include "main.h"
 
 /**
- * main - point d'entrée du programme
- * Description : affiche les lettres de l'alphabet
- * Return: 0 si le programme s'exécute correctement
+ * print_alphabet - Affiche les lettres de l'alphabet en minuscules
  */
 
-int main(void)
+void print_alphabet(void)
 {
 	char alphabet = 'a';
 
@@ -17,6 +15,4 @@ int main(void)
 	}
 
 	_putchar('\n');
-
-	return (0);
 }
