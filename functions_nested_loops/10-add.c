@@ -25,5 +25,4 @@ int add(int a, int b)
 		_putchar((somme / 10) + '0');
     }
 	_putchar((somme % 10) + '0');
-	return (somme);
 }
