@@ -10,19 +10,5 @@
 
 int add(int a, int b)
 {
-	int somme;
-
-	somme = a + b;
-
-	if (somme < 0)
-    {
-		_putchar('-');
-		somme = -somme;
-    }
-
-	if (somme >= 10)
-    {
-		_putchar((somme / 10) + '0');
-    }
-	_putchar((somme % 10) + '0');
+	return (a + b);
 }
