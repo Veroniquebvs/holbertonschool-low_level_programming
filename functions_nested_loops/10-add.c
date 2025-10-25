@@ -13,7 +13,18 @@ int add(int a, int b)
 	int somme;
 
 	somme = a + b;
-	_putchar(somme / 10);
-	_putchar(somme % 10);
+
+	if (somme < 0)
+    {
+		_putchar('-');
+		somme = -somme;
+    }
+
+	if (somme >= 10)
+    {
+		_putchar((somme / 10) + '0');
+    }
+	_putchar((somme % 10) + '0');
+	_putchar('\n');
 	return (somme);
 }
