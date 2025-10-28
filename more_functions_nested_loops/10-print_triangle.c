@@ -2,7 +2,7 @@
 
 /**
  * print_triangle - Affiche le charactère '#'
- * @n: Le nombre de fois où le charactère '#' sera affiché
+ * @n: Le nombre de fois où le charactère '#' sera affiché en triangle
  *
  */
 
