@@ -3,9 +3,8 @@
 
 /**
  * main - point d'entrée du programme
- * Description : affiche les nombres de 1 à 100,
- * Si multiple de 3 : affiche Fizz,
- * Si multiple de 5 : affiche Buzz,
+ * Si multiple de 3 : affiche Fizz
+ * Si multiple de 5 : affiche Buzz
  * Si multiple de 3 et 5 : affiche FizzBuzz
  * Return: 0 si le programme s'exécute correctement
  */
