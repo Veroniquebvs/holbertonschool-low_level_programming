@@ -19,7 +19,7 @@ void _puts(char *str)
 		lengh++;
 	}
 
-	while (i <= lengh)
+	while (i < lengh)
 	{
 		_putchar(str[i]);
 		i++;
