@@ -28,7 +28,6 @@ int _rootsquare(int n, int x)
 /**
  * _sqrt_recursion - racine carrée de n
  * @n: valeur à calculer
- * @x: valeur du carré
  *
  *Return: racine carrée de n
  */
