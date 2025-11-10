@@ -21,7 +21,8 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	len = strlen(str);
+	for (len = 0; len != '\0'; len++)
+	;
 
 	newstr = malloc((sizeof(char) * len) + 1);
 
