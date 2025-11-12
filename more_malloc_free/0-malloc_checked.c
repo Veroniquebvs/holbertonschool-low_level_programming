@@ -12,12 +12,10 @@ void *malloc_checked(unsigned int b)
 {
 	void *allocmem;
 
-	allocmem = malloc(b * sizeof(unsigned int));
+	allocmem = malloc(sizeof(b));
 
 	if (allocmem == NULL)
 	{
-		return (NULL);
-
 		exit(98);
 	}
 
