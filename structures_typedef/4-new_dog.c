@@ -2,7 +2,12 @@
 #include <stdlib.h>
 #include "dog.h"
 
-/** clacule longueur d'une chaîne de caractère */
+/**
+ * _strlen - renvoie la longueur d'une chaine
+ * @s: Le nombre à échanger
+ *
+ *Return: la longueur de la chaine
+ */
 int _strlen(char *s)
 {
 	int i, lengh = 0;
@@ -14,7 +19,13 @@ int _strlen(char *s)
 	return (lengh);
 }
 
-/** copie la chaîne de caractère */
+/**
+ * *_strcpy - copie une chaine de caractère
+ * @dest: pointeur d'une chaîne de caractère
+ * @src: pointeur recevant copie d'une chaîne de caractère
+ *
+ *Return: la longueur de la chaine
+ */
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
