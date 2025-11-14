@@ -2,71 +2,72 @@
 #include <stdlib.h>
 #include "dog.h"
 
+/** clacule longueur d'une chaîne de caractère */
+int _strlen(char *s)
+{
+	int i, lengh = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		lengh++;
+	}
+	return (lengh);
+}
+
+/** copie la chaîne de caractère */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 /**
  * new_dog - create a new dog
  * @name: name of the dog
  * @age: age of the dog
  * @owner: name of the owner
+ * Return: pointer to the new dog, or NULL if it fails
  */
-
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	int lenname;
-	int lenowner;
-	int i;
-	int j;
+	int lenname, lenowner;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
 
 	d = malloc(sizeof(dog_t));
-
 		if (d == NULL)
-		{
 			return (NULL);
-		}
 
-	for (lenname = 0; name[lenname] != '\0'; lenname++)
-	;
+	lenname = _strlen(name);
 
 	d->name = malloc(sizeof(char) * (lenname + 1));
-
 	if (d->name == NULL)
 	{
 		free(d);
 		return (NULL);
 	}
+	_strcpy(d->name, name);
 
-	for(i = 0; i < lenname; i++)
-	{
-		d->name[i] = name[i];
-	}
+	d->age = age;
 
-	d->name[i] = '\0';
-
-	(d->age = age);
-
-	for (lenowner = 0; owner[lenowner] != '\0'; lenowner++)
-	;
-
+	lenowner = _strlen(owner);
 	d->owner = malloc(sizeof(char) * (lenowner + 1));
-
 	if (d->owner == NULL)
 	{
 		free(d->name);
 		free(d);
 		return (NULL);
 	}
-
-	for(j = 0; j < lenowner; j++)
-	{
-		d->owner[j] = owner[j];
-	}
-
-	d->owner[j] = '\0';
+	_strcpy(d->owner, owner);
 
 	return (d);
-
 }
