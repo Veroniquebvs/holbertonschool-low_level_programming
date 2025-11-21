@@ -3,6 +3,35 @@
 #include <stdarg.h>
 
 /**
+* p_char - prints a char
+* @ap: argument list
+*/
+void p_char(va_list ap) { printf("%c", va_arg(ap, int)); }
+
+/**
+* p_int - prints an int
+* @ap: argument list
+*/
+void p_int(va_list ap) { printf("%d", va_arg(ap, int)); }
+
+/**
+* p_float - prints a float
+* @ap: argument list
+*/
+void p_float(va_list ap) { printf("%f", va_arg(ap, double)); }
+
+/**
+* p_string - prints a string
+* @ap: argument list
+*/
+void p_string(va_list ap)
+{
+	char *s = va_arg(ap, char *);
+
+	printf("%s", s ? s : "(nil)");
+}
+
+/**
  * print_all - prints all arguments
  *@format: separator
  *
@@ -11,50 +40,36 @@
 
 void print_all(const char * const format, ...)
 {
+	void (*fun[4])(va_list) = {p_char, p_int, p_float, p_string};
+	char t[4] = {'c', 'i', 'f', 's'}, *sep = "";
 	va_list ap;
-	char *str;
-	int i = 0;
+	int i = 0, j;
 
 	va_start(ap, format);
 
-	if (format == NULL)
+	if (format == NULL || format[0] == '\0')
 	{
 		printf("\n");
+		va_end(ap);
 		return;
 	}
 
-	else
+	while (format[i] != '\0')
 	{
-		while (format[i] != '\0')
+		j = 0;
+		while (j < 4)
 		{
-			printf(", ");
-			
-			if (format[i] == 'c')
-				printf("%c", va_arg(ap, int));
-
-			else if (format[i] == 'i')
-				printf("%d", va_arg(ap, int));
-
-			else if (format[i] == 'f')
-				printf("%f", va_arg(ap, double));
-
-			else if (format[i] == 's')
+			if (format[i] == t[j])
 			{
-				str = va_arg(ap, char*);
-				if (str == NULL)
-				{
-					printf("(nil)");
-				}
-				else
-				printf("%s", str);
+				printf("%s", sep);
+				fun[j](ap);
+				sep = ", ";
 			}
-
-			i++;
+			j++;
 		}
-
+		i++;
 	}
 
 	printf("\n");
-
 	va_end(ap);
 }
