@@ -47,10 +47,13 @@ list_t *create_node(const char *str, unsigned int len)
 
 list_t *add_node(list_t **head, const char *str)
 {
-	unsigned int len;
+	unsigned int len = 0;
 	list_t *new_node;
 
-	len = _strlen(str);
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
 	new_node = create_node(str, len);
 
