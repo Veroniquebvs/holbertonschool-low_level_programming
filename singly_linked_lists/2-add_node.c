@@ -50,7 +50,7 @@ list_t *add_node(list_t **head, const char *str)
 	unsigned int len;
 	list_t *new_node;
 
-	len = strlen(str);
+	len = _strlen(str);
 
 	new_node = create_node(str, len);
 
